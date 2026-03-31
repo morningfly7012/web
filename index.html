@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGLOO Studio</title>
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Cursor glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">IGLOO</div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#links" class="nav-link">Links</a>
+    </div>
+    <div class="nav-indicator"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="line" data-text="BUILDING">BUILDING</span>
+        <span class="line" data-text="THE FUTURE">THE FUTURE</span>
+      </h1>
+      <p class="hero-subtitle">Creative studio crafting immersive digital experiences</p>
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>SCROLL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-label">ABOUT</div>
+      <h2 class="section-title" data-animate>
+        We create <span class="highlight">extraordinary</span><br />
+        digital experiences
+      </h2>
+      <div class="about-grid">
+        <div class="about-card" data-animate>
+          <div class="card-number">01</div>
+          <h3>Design</h3>
+          <p>Crafting pixel-perfect interfaces with attention to every detail. We blend aesthetics with functionality.</p>
+        </div>
+        <div class="about-card" data-animate>
+          <div class="card-number">02</div>
+          <h3>Develop</h3>
+          <p>Building robust, scalable applications with cutting-edge technology and clean architecture.</p>
+        </div>
+        <div class="about-card" data-animate>
+          <div class="card-number">03</div>
+          <h3>Innovate</h3>
+          <p>Pushing boundaries with 3D experiences, WebGL, and interactive storytelling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-container">
+      <div class="section-label">PROJECTS</div>
+      <h2 class="section-title" data-animate>Selected Works</h2>
+      <div class="projects-list">
+        <div class="project-item" data-animate data-color="#4fc3f7">
+          <div class="project-index">01</div>
+          <div class="project-info">
+            <h3 class="project-name">Arctic Protocol</h3>
+            <p class="project-desc">Web3 platform with immersive 3D experience</p>
+          </div>
+          <div class="project-year">2025</div>
+        </div>
+        <div class="project-item" data-animate data-color="#b388ff">
+          <div class="project-index">02</div>
+          <div class="project-info">
+            <h3 class="project-name">Frost Engine</h3>
+            <p class="project-desc">Real-time rendering framework for creative studios</p>
+          </div>
+          <div class="project-year">2025</div>
+        </div>
+        <div class="project-item" data-animate data-color="#80cbc4">
+          <div class="project-index">03</div>
+          <div class="project-info">
+            <h3 class="project-name">Crystal Network</h3>
+            <p class="project-desc">Decentralized infrastructure with visual identity</p>
+          </div>
+          <div class="project-year">2024</div>
+        </div>
+        <div class="project-item" data-animate data-color="#f48fb1">
+          <div class="project-index">04</div>
+          <div class="project-info">
+            <h3 class="project-name">Glacier Labs</h3>
+            <p class="project-desc">AI-powered creative tools for designers</p>
+          </div>
+          <div class="project-year">2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links / Contact Section -->
+  <section id="links">
+    <div class="section-container">
+      <div class="section-label">CONNECT</div>
+      <h2 class="section-title" data-animate>Get in touch</h2>
+      <div class="links-grid">
+        <a href="#" class="link-card" data-animate>
+          <span class="link-icon">&#8599;</span>
+          <span class="link-text">Twitter / X</span>
+        </a>
+        <a href="#" class="link-card" data-animate>
+          <span class="link-icon">&#8599;</span>
+          <span class="link-text">GitHub</span>
+        </a>
+        <a href="#" class="link-card" data-animate>
+          <span class="link-icon">&#8599;</span>
+          <span class="link-text">Discord</span>
+        </a>
+        <a href="#" class="link-card" data-animate>
+          <span class="link-icon">&#8599;</span>
+          <span class="link-text">Email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">IGLOO</div>
+      <p class="footer-copy">&copy; 2025 Igloo Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
