@@ -1,149 +1,159 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IGLOO Studio</title>
+  <title>Igloo Inc.</title>
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Cursor glow -->
-  <div id="cursor-glow"></div>
+  <!-- Loading / Intro screen -->
+  <div id="intro-overlay">
+    <div class="intro-text">
+      <span class="intro-line" data-final="IGLOO">░░░░░</span>
+      <span class="intro-line" data-final="INC.">░░░░</span>
+    </div>
+  </div>
+
+  <!-- WebGL Canvas (full page) -->
+  <canvas id="webgl-canvas"></canvas>
 
   <!-- Navigation -->
   <nav id="navbar">
-    <div class="nav-logo">IGLOO</div>
-    <div class="nav-links">
-      <a href="#hero" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#links" class="nav-link">Links</a>
+    <div class="nav-logo">igloo</div>
+    <div class="nav-breadcrumb">
+      <span class="nav-section active" data-section="intro">Intro</span>
+      <span class="nav-divider">/</span>
+      <span class="nav-section" data-section="projects">Projects</span>
+      <span class="nav-divider">/</span>
+      <span class="nav-section" data-section="links">Links</span>
     </div>
-    <div class="nav-indicator"></div>
+    <div class="nav-sound" id="sound-toggle">
+      <span class="sound-icon">◉</span>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="line" data-text="BUILDING">BUILDING</span>
-        <span class="line" data-text="THE FUTURE">THE FUTURE</span>
-      </h1>
-      <p class="hero-subtitle">Creative studio crafting immersive digital experiences</p>
-      <div class="scroll-indicator">
+  <!-- Scroll container for content overlay -->
+  <div id="scroll-container">
+
+    <!-- Section 1: Intro / Hero -->
+    <section id="section-intro" class="full-section">
+      <div class="intro-content">
+        <p class="intro-tagline glitch-text">Introducing</p>
+        <h1 class="intro-title">
+          <span class="title-line glitch-text">Igloo Inc.</span>
+        </h1>
+        <p class="intro-description glitch-text">
+          The parent company to Pudgy Penguins and OverpassIP.
+        </p>
+        <p class="intro-mission">
+          Our mission is to create the largest onchain community,<br/>
+          driving the consumer crypto revolution.
+        </p>
+      </div>
+      <div class="scroll-hint">
         <div class="scroll-line"></div>
-        <span>SCROLL</span>
+        <span>SCROLL TO EXPLORE</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="section-container">
-      <div class="section-label">ABOUT</div>
-      <h2 class="section-title" data-animate>
-        We create <span class="highlight">extraordinary</span><br />
-        digital experiences
-      </h2>
-      <div class="about-grid">
-        <div class="about-card" data-animate>
-          <div class="card-number">01</div>
-          <h3>Design</h3>
-          <p>Crafting pixel-perfect interfaces with attention to every detail. We blend aesthetics with functionality.</p>
+    <!-- Section 2: Projects -->
+    <section id="section-projects" class="full-section">
+      <div class="projects-wrapper">
+
+        <div class="project-slide" data-project="pudgy" id="project-pudgy">
+          <div class="project-content">
+            <span class="project-label">01 — PROJECT</span>
+            <h2 class="project-title glitch-text">Pudgy Penguins</h2>
+            <p class="project-desc">
+              The beloved NFT brand and first point of entry into the Igloo ecosystem.
+              Leveraging the emotional connection millions already have with the brand.
+            </p>
+            <div class="project-tags">
+              <span class="tag">NFT</span>
+              <span class="tag">Community</span>
+              <span class="tag">Brand</span>
+            </div>
+          </div>
         </div>
-        <div class="about-card" data-animate>
-          <div class="card-number">02</div>
-          <h3>Develop</h3>
-          <p>Building robust, scalable applications with cutting-edge technology and clean architecture.</p>
+
+        <div class="project-slide" data-project="overpass" id="project-overpass">
+          <div class="project-content">
+            <span class="project-label">02 — PROJECT</span>
+            <h2 class="project-title glitch-text">OverpassIP</h2>
+            <p class="project-desc">
+              IP licensing protocol enabling NFT holders to monetize their digital assets.
+              Building the infrastructure for creator-owned intellectual property.
+            </p>
+            <div class="project-tags">
+              <span class="tag">IP Licensing</span>
+              <span class="tag">Protocol</span>
+              <span class="tag">Web3</span>
+            </div>
+          </div>
         </div>
-        <div class="about-card" data-animate>
-          <div class="card-number">03</div>
-          <h3>Innovate</h3>
-          <p>Pushing boundaries with 3D experiences, WebGL, and interactive storytelling.</p>
+
+        <div class="project-slide" data-project="abstract" id="project-abstract">
+          <div class="project-content">
+            <span class="project-label">03 — PROJECT</span>
+            <h2 class="project-title glitch-text">Abstract</h2>
+            <p class="project-desc">
+              A consumer-centric Ethereum Layer 2 network designed to provide
+              robust infrastructure for consumer crypto applications.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Layer 2</span>
+              <span class="tag">Blockchain</span>
+              <span class="tag">Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Links (Particle footer) -->
+    <section id="section-links" class="full-section">
+      <div class="links-content">
+        <div class="links-left">
+          <h2 class="links-title glitch-text">Connect</h2>
+          <div class="links-list">
+            <a href="https://x.com/iglooinc" target="_blank" class="link-item" data-shape="penguin">
+              <span class="link-name">Twitter / X</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <a href="#" class="link-item" data-shape="cube">
+              <span class="link-name">Discord</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <a href="#" class="link-item" data-shape="sphere">
+              <span class="link-name">Blog</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <a href="#" class="link-item" data-shape="torus">
+              <span class="link-name">Careers</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            <a href="#" class="link-item" data-shape="diamond">
+              <span class="link-name">Contact</span>
+              <span class="link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="links-right" id="particle-viewport">
+          <!-- Particle canvas renders here -->
         </div>
       </div>
-    </div>
-  </section>
+      <footer class="site-footer">
+        <span>© 2025 Igloo, Inc.</span>
+        <span class="footer-location">Miami, Florida</span>
+      </footer>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="section-container">
-      <div class="section-label">PROJECTS</div>
-      <h2 class="section-title" data-animate>Selected Works</h2>
-      <div class="projects-list">
-        <div class="project-item" data-animate data-color="#4fc3f7">
-          <div class="project-index">01</div>
-          <div class="project-info">
-            <h3 class="project-name">Arctic Protocol</h3>
-            <p class="project-desc">Web3 platform with immersive 3D experience</p>
-          </div>
-          <div class="project-year">2025</div>
-        </div>
-        <div class="project-item" data-animate data-color="#b388ff">
-          <div class="project-index">02</div>
-          <div class="project-info">
-            <h3 class="project-name">Frost Engine</h3>
-            <p class="project-desc">Real-time rendering framework for creative studios</p>
-          </div>
-          <div class="project-year">2025</div>
-        </div>
-        <div class="project-item" data-animate data-color="#80cbc4">
-          <div class="project-index">03</div>
-          <div class="project-info">
-            <h3 class="project-name">Crystal Network</h3>
-            <p class="project-desc">Decentralized infrastructure with visual identity</p>
-          </div>
-          <div class="project-year">2024</div>
-        </div>
-        <div class="project-item" data-animate data-color="#f48fb1">
-          <div class="project-index">04</div>
-          <div class="project-info">
-            <h3 class="project-name">Glacier Labs</h3>
-            <p class="project-desc">AI-powered creative tools for designers</p>
-          </div>
-          <div class="project-year">2024</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Links / Contact Section -->
-  <section id="links">
-    <div class="section-container">
-      <div class="section-label">CONNECT</div>
-      <h2 class="section-title" data-animate>Get in touch</h2>
-      <div class="links-grid">
-        <a href="#" class="link-card" data-animate>
-          <span class="link-icon">&#8599;</span>
-          <span class="link-text">Twitter / X</span>
-        </a>
-        <a href="#" class="link-card" data-animate>
-          <span class="link-icon">&#8599;</span>
-          <span class="link-text">GitHub</span>
-        </a>
-        <a href="#" class="link-card" data-animate>
-          <span class="link-icon">&#8599;</span>
-          <span class="link-text">Discord</span>
-        </a>
-        <a href="#" class="link-card" data-animate>
-          <span class="link-icon">&#8599;</span>
-          <span class="link-text">Email</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">IGLOO</div>
-      <p class="footer-copy">&copy; 2025 Igloo Studio. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
